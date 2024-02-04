@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpendingCalculatorApp</title>
+    <!--! TAİLWİND CSS CDN  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-slate-300 h-full pb-5 flex flex-col justify-center">
+    <!--! INCOME ,EXPENSES AND TOTAL INPUTS SECTİONS START -->
+    <div class="w-screen flex justify-center">
+      <div
+        class="container mx-auto flex flex-col items-center py-9 gap-6 text-lg"
+      >
+        <h1 class="text-3xl font-semibold">Spending Calculator App</h1>
+        <div
+          class="flex items-center bg-slate-500 px-2 py-1 text-white rounded shadow-lg w-80"
+        >
+          <div class="w-20">TOTAL:</div>
+          <input
+            id="total"
+            class="px-2 py-2 bg-inherit text-right"
+            type="text"
+            disabled
+          />
+        </div>
+        <div
+          class="flex items-center bg-green-500 px-2 py-1 text-white rounded shadow-lg w-80"
+        >
+          <div class="w-20">İncome:</div>
+          <input
+            id="income"
+            class="px-2 py-2 bg-inherit text-right"
+            type="text"
+            disabled
+          />
+        </div>
+        <div
+          class="flex items-center bg-red-700 px-2 py-1 text-white rounded shadow-lg w-80"
+        >
+          <div class="w-20">Expenses:</div>
+          <input
+            id="expenses"
+            class="px-2 py-2 bg-inherit text-right"
+            type="text"
+            disabled
+          />
+        </div>
+      </div>
+    </div>
+    <!--! INCOME ,EXPENSES AND TOTAL INPUTS SECTİONS STOP -->
+    <!--! INCOME OR EXPENSE CREATE  INPUTS  AND LİSTS SECTİON START -->
+    <div class="form input">
+      <!--! INCOME OR EXPENSE CREATE  INPUTS SECTİON START  -->
+      <div
+        class="container mx-auto grid grid-cols-1 gap-8 items-center text-lg"
+      >
+        <div class="flex gap-5 justify-center flex-wrap">
+          <select class="p-1 rounded" name="" id="operator">
+            <option class="flex items-center" value="+">+</option>
+            <option class="flex items-center" value="-">-</option>
+          </select>
+          <input
+            id="description"
+            class="rounded ps-2 pe-12"
+            type="text"
+            placeholder="Add a description"
+          />
+          <input
+            id="price"
+            class="rounded ps-2 w-28"
+            min="0"
+            type="number"
+            placeholder="Value"
+          />
+          <button
+            id="confirm"
+            class="border border-green-600 bg-transparent px-4 py-1 rounded hover:bg-green-700 hover:text-white"
+          >
+            Onayla
+          </button>
+          <button
+            id="clear"
+            class="border border-red-600 bg-transparent px-4 py-1 rounded hover:bg-red-700 hover:text-white"
+          >
+            Temizle
+          </button>
+        </div>
+      </div>
+      <!--! INCOME OR EXPENSE CREATE  INPUTS SECTİON STOP  -->
+      <!--! INCOME OR EXPENSE LİSTS SECTİON START  -->
+      <div class="list">
+        <div  class="me-5 mt-8 grid grid-cols-2 gap-12 text-left">
+          <div id="incomelist" class="ps-4 text-xl flex flex-col gap-3">
+            <h3 class="text-green-800">İNCOME</h3>
+          </div>
+          <div id="expenseslist" class="ps-4 text-xl flex flex-col gap-3">
+            <h3 class="text-red-800">EXPENSES</h3>
+          </div>
+        </div>
+      </div>
+      <!--! INCOME OR EXPENSE LİSTS SECTİON STOP  -->
+    </div>
+    <!--! INCOME OR EXPENSE CREATE  INPUTS  AND LİSTS SECTİON STOP -->
+    <script src="./index.js"></script>
+  </body>
+</html>
