@@ -20,7 +20,7 @@ let incArr = [];//? İncome ları tutacak dizi
 let expArr = [];//? Expenses ları tutacak dizi
 let indexCounter1=0;//? İncome dizisi için id leri sayacak counter elemanı
 let indexCounter2=0;//? Expenses dizisi için id leri sayacak counter elemanı
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   //! Sayfa yüklendiğinde yerel depodan önceki(varsa) verileri alır ve ekrana yansıtır.
   const savedData = JSON.parse(localStorage.getItem("expenseTrackerData"));
   if (savedData) {
@@ -29,6 +29,8 @@ window.addEventListener("load", () => {
     expensesValue = savedData.expensesValue;
     incArr = savedData.incArr;
     expArr = savedData.expArr;
+    indexCounter1 = incArr.length === 0 ? 0 :findBiggestID(incArr) + 1;
+    indexCounter2 = expArr.length === 0 ? 0 : findBiggestID(expArr) + 1;
     displayValue.display();
     UI.calculate("+", 0);
     UI.calculate("-", 0);
@@ -38,6 +40,15 @@ window.addEventListener("load", () => {
   }
 });
 
+function findBiggestID(array) {
+  let ID = array[0].arrayid;
+  for (let i = 1; i < array.length; i++) {
+      if (array[i].arrayid > ID) {
+        ID = array[i].arrayid;
+      }
+  }
+  return ID;
+}
 class displayValue {
   //! Gelir ,gider ve toplam inputlarına değerleri yazar. 
   static display() {
