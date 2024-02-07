@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
     displayValue.display();
   }
 });
-
+//! Sayfa yenilendikten sonra indexCounter değişkenlerini günceller.
 function findBiggestID(array) {
   let ID = array[0].arrayid;
   for (let i = 1; i < array.length; i++) {
