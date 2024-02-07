@@ -32,19 +32,20 @@
 }
 @media (max-width: 362px) {
   .container {
-    font-size: 80%;
     padding: 20px 10%;
     box-sizing: border-box;
+  }
 
-  }
-  .container div{
-    width: 100%;
-  }
   #price {
     width: auto !important;
   }
 }
-
+@media (max-width: 300px){
+  .container {
+    padding: 20px 5%;
+    box-sizing: border-box;
+  }
+}
 
 
 
